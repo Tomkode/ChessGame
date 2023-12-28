@@ -1,0 +1,25 @@
+
+
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+
+<head>
+    <meta charset="UTF-8"/>
+    <title>Chess Game</title>
+    <link rel="stylesheet" type = "text/css" th:href="@{/style.css}"/>
+</head>
+
+<body>
+
+<div class="container">
+    <div th:each="pair : ${board.getBoard().entrySet().stream().toList()}"
+         th:id = "${pair.getKey()}"> <img width = "75px" height = "75px"
+                                          th:src = "${pair.getValue().getPiece().getImagePath()}"/></div>
+
+</div>
+</body>
+<script type="text/javascript" th:src="@{script.js}"></script>
+<script type="text/javascript" th:src="@{actions.js}"></script>
+
+</html>
+
